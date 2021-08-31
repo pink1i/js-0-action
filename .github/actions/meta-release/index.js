@@ -12,7 +12,7 @@ const github = require('@actions/github');
       const eventName = github.context.eventName;
 
 
-      console.log(token, octokit, owner, repo, eventName)
+      console.log(token, owner, repo, eventName)
       if (eventName !== 'release') {
           core.setFailed(`Should be run by a release event but event name = ${eventName}`);
       }
