@@ -39,7 +39,7 @@ const { Extractor } = require('markdown-tables-to-json');
       if (desc == null || typeof(desc) === 'undefined') {
         console.log('Cannot extract metadata when description null or undefined')
       } else {
-        const extractedObject = Extractor.extractObject(body, 'columns', true)
+        const extractedObject = Extractor.extractObject(desc, 'columns', true)
         if (extractedObject) {
             for (const [root_key, root_value] of Object.entries(extractedObject)) {
                 for (const [key, value] of Object.entries(root_value)) {
