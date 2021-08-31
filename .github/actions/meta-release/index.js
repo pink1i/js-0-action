@@ -28,7 +28,7 @@ const github = require('@actions/github');
       if (desc == null || typeof(desc) === 'undefined') {
           desc = "";
       }
-      console.log(desc)
+      console.log(JSON.stringify(desc))
   } catch (error) {
       core.setFailed(error.message);
   }
