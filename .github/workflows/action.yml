@@ -10,6 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: get release action
+        id: release_metadata
         uses: ./.github/actions/meta-release
         with:
           token: ${{secrets.GITHUB_TOKEN}}
+      - name: check result
+        run: |
+          echo "Polling ${{ steps.release_metadata.outputs.tag_polling }}"
+          echo "Common  ${{ steps.release_metadata.outputs.tag_common }}"
+          echo "Engine  ${{ steps.release_metadata.outputs.tag_engine }}"
