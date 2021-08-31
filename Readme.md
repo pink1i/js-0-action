@@ -10,15 +10,13 @@
    A GitHub Action for get metadata from GitHub Releases with specified fotmat.
 </p>
 
-<div align="center">
-  <img src="demo.png"/>
-</div>
-
 <br />
+
 ## 🤸Usage
 ### 🚥 Metadata format
 
 Metadata that action can get just be table markdown.
+
 **inputs**
 | Name | Type | Description |
 | --- | ----------- | -------|
@@ -47,7 +45,7 @@ Output of action can access by:
 
 ### For Example
 
-1. Description when release
+**1. Description when release**
 
 ```
 ## Some Title
@@ -61,7 +59,7 @@ Output of action can access by:
 | repo1 | 1.2.0 | commit1 |
 | repo2 | 1.3.0 | commit2 |
 ```
-2. Setup action file
+**2. Setup action file**
 
 ```
 name: Action example
@@ -89,7 +87,7 @@ jobs:
 
 ```
 
-3. Output
+**3. Output**
 
 ```
 Tag repo1: 1.2.0
