@@ -1,11 +1,21 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const { Extractor } = require('markdown-tables-to-json');
 
 (async () => {
   try {
-      const token = core.getInput('token');
-      const octokit = github.getOctokit(token);
+    //   const octokit = github.getOctokit('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');
+    //   const owner = 'pink1i'
+    //   const repo = 'js-0-action'
 
+    // const release = await octokit.rest.repos.getRelease({
+    //       owner: owner,
+    //       repo: repo,
+    //       release_id: 48711789
+    //   });
+
+    // console.log(release.data)
+      const token = core.getInput('token');
       const owner = github.context.repo.owner;
       const repo = github.context.repo.repo;
 
@@ -24,11 +34,21 @@ const github = require('@actions/github');
           release_id: releaseId
       });
 
-      let desc = release.data.body;
+      const desc = release.data.body;
       if (desc == null || typeof(desc) === 'undefined') {
-          desc = "";
+        console.log('Cannot extract metadata when description null or undefined')
+      } else {
+        const extractedObject = Extractor.extractObject(body, 'columns', true)
+        if (extractedObject) {
+            for (const [root_key, root_value] of Object.entries(extractedObject)) {
+                for (const [key, value] of Object.entries(root_value)) {
+                    core.setOutput(`${root_key}_${key}`, value);
+                }
+            }
+        } else {
+            console.log('Cannot extract metadata when description null or undefined')
+        }
       }
-      console.log(JSON.stringify(desc))
   } catch (error) {
       core.setFailed(error.message);
   }
