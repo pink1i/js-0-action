@@ -4,7 +4,8 @@ const { Extractor } = require('markdown-tables-to-json');
 
 (async () => {
   try {
-    //   const octokit = github.getOctokit('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');
+    const token = core.getInput('token');
+    const octokit = github.getOctokit(token);
     //   const owner = 'pink1i'
     //   const repo = 'js-0-action'
 
@@ -15,7 +16,7 @@ const { Extractor } = require('markdown-tables-to-json');
     //   });
 
     // console.log(release.data)
-      const token = core.getInput('token');
+
       const owner = github.context.repo.owner;
       const repo = github.context.repo.repo;
 
