@@ -1,22 +1,14 @@
 {
-  "name": "js-0-action",
+  "name": "extract-metadata-release",
   "version": "1.0.0",
-  "description": "",
+  "description": "Extract custom metadata from description of release",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pink1i/js-0-action.git"
-  },
   "keywords": [],
-  "author": "",
+  "author": "hongtm-1355",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pink1i/js-0-action/issues"
-  },
-  "homepage": "https://github.com/pink1i/js-0-action#readme",
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@actions/github": "^5.0.0",
