@@ -1,0 +1,16 @@
+name: TEST ACtion
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: get release action
+        uses: ./actions/meta-release
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
