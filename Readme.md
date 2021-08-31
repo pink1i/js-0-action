@@ -10,8 +10,6 @@
    A GitHub Action for get metadata from GitHub Releases with specified fotmat.
 </p>
 
-<br />
-
 ## 🤸Usage
 ### 🚥 Metadata format
 
