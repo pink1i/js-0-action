@@ -1,10 +1,9 @@
 name: 'Parse Release Description'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  token:
+    description: 'GitHub token with permission to update the release. The GITHUB_TOKEN provided to a workflow should be enough.'
     required: true
-    default: 'World'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
